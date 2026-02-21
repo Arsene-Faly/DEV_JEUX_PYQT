@@ -14,7 +14,7 @@ class App(QMainWindow):
     # Configuration de la fenêtre
     # ----------------------
     def setup_window(self):
-        self.setWindowTitle("Hello World")
+        self.setWindowTitle("My Application")
         self.setFixedSize(1000, 400)
     
     # ----------------------
