@@ -1,0 +1,1 @@
+Eptape 1 = Création d’une application PyQt6 utilisant les classes, les objets et l’héritage, avec un style séparé et l’importation d’un logo au format .ico.
