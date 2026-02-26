@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QLabel, QHBoxLayout, QPushButton, QWidget
+from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QLabel
 from PyQt6.QtGui import QIcon
 import os
 
@@ -8,7 +8,7 @@ class App(QMainWindow):
         self.setup_window()
         self.load_icon()
         self.load_style()
-        self.add_layouts_horizontal()
+        self.action_boutton()
     
     # ----------------------
     # Configuration de la fenêtre
@@ -41,31 +41,32 @@ class App(QMainWindow):
     # ----------------------
     # Ajouter le message de bienvenue
     # ----------------------
-    def add_layouts_horizontal(self):
-        # Création layouts
-        layouthorizontal = QHBoxLayout()
+    def action_boutton(self):
+        layout = QVBoxLayout()
         
-        button1 = QPushButton("Button 1")
-        # class pour styliser dans qss
-        button1.setObjectName("buttonPrimary")
+        # Création du label comme attribut de la classe
+        self.label = QLabel("Bienvenue dans votre Application !")
+        self.label.setProperty("class", "formLabel")
         
-        button2 = QPushButton("Button 2")
-        button2.setProperty("class", "button")
+        # Création du bouton
+        button = QPushButton("Boutton")
+        button.setProperty("class", "button")
         
-        button3 = QPushButton("Button 3")
-        button3.setProperty("class", "button")
+        # Connexion du signal clicked à une méthode
+        button.clicked.connect(self.bouton_clicked)
         
-        button4 = QPushButton("Button 4")
-        button4.setProperty("class", "button")
-        
-        layouthorizontal.addWidget(button1)
-        layouthorizontal.addWidget(button2)
-        layouthorizontal.addWidget(button3)
-        layouthorizontal.addWidget(button4)
-        
-        self.setLayout(layouthorizontal)
+        layout.addWidget(self.label)
+        layout.addWidget(button)
         
         Widget = QWidget(self)
-        Widget.setLayout(layouthorizontal)
+        Widget.setLayout(layout)
         
         self.setCentralWidget(Widget)
+        
+    # ----------------------
+    # Méthode appelée lorsque le bouton est cliqué
+    # ----------------------
+    def bouton_clicked(self):
+        print("Le bouton a été cliqué !")
+        
+        self.label.setText("Hello World !")
