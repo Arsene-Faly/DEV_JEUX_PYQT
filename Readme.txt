@@ -15,3 +15,5 @@ Etape 5 : Utilisation de la classe QGridLayout pour organiser les widgets en gri
 --Création formulaire en grille
 
 Etape 6 : Utilisation des actions sur les boutons et des méthodes
+
+Etape 7 : Cliquer une boutton et passer dans autre page(Comme lien dans les web)
