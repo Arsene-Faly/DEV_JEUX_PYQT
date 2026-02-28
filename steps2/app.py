@@ -46,22 +46,22 @@ class App(QMainWindow):
         # Création layouts
         layoutvertical = QVBoxLayout()
         
-        button1 = QPushButton("Button 1", self)
+        button1 = QPushButton("Button 1")
         # class pour styliser dans qss
         button1.setObjectName("buttonPrimary")
         
-        button2 = QPushButton("Button 2", self)
+        button2 = QPushButton("Button 2")
         button2.setProperty("class", "button")
         
-        button3 = QPushButton("Button 3", self)
+        button3 = QPushButton("Button 3")
         button3.setProperty("class", "button")
         
-        button4 = QPushButton("Button 4", self)
+        button4 = QPushButton("Button 4")
         button4.setProperty("class", "button")
         
         # Ajout des widgets
-        layoutvertical.addWidget(button1)
         layoutvertical.addWidget(button2)
+        layoutvertical.addWidget(button1)
         layoutvertical.addWidget(button3)
         layoutvertical.addWidget(button4)
         
